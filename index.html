@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cholin Solutions Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a3a6b;
+      --navy-dark: #0f2347;
+      --navy-light: #254d8f;
+      --gold: #c9a227;
+      --gold-light: #e2b93b;
+      --off-white: #f4f1eb;
+      --warm-gray: #8a8680;
+      --text: #1e1e1e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background-color: var(--off-white);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--navy-dark);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    }
+
+    .logo-img {
+      height: 64px;
+      width: auto;
+      display: block;
+    }
+
+    .header-contact {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .header-contact a {
+      color: var(--gold-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .header-contact a:hover { color: #fff; }
+
+    /* ── HERO RULE ── */
+    .rule-band {
+      background: var(--gold);
+      height: 4px;
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 40px 100px;
+    }
+
+    /* Profile section */
+    .profile {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Left column */
+    .profile-left {
+      position: sticky;
+      top: 40px;
+    }
+
+    .monogram {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .monogram img {
+      width: 102px;
+      height: 102px;
+      object-fit: contain;
+    }
+
+    .profile-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--navy-dark);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .profile-title {
+      font-family: 'Lora', serif;
+      font-size: 0.92rem;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .profile-location {
+      font-size: 0.8rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .contact-block {
+      font-size: 0.82rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .contact-email {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-email a {
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--gold);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact-email a:hover {
+      color: var(--gold);
+      border-color: var(--navy);
+    }
+
+    /* Right column */
+    .profile-right {}
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .about-text {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #2e2e2e;
+      margin-bottom: 48px;
+    }
+
+    .services-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #3a3a3a;
+      line-height: 1.4;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(26,58,107,0.08);
+    }
+
+    .service-item::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 3px solid var(--gold);
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-location {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.06em;
+      font-style: italic;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header        { animation: fadeUp 0.5s ease both; }
+    .profile-left  { animation: fadeUp 0.6s 0.15s ease both; }
+    .profile-right { animation: fadeUp 0.6s 0.28s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      header { padding: 20px 24px; flex-direction: column; gap: 14px; text-align: center; }
+      .logo-img { height: 48px; }
+      main { padding: 48px 24px 72px; }
+      .profile { grid-template-columns: 1fr; gap: 40px; }
+      .profile-left { position: static; }
+      .services-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="CSL LOGO.png" alt="Cholin Solutions Ltd." class="logo-img" />
+    <div class="header-contact">
+      <a href="mailto:info@cholin.ca">info@cholin.ca</a>
+    </div>
+  </header>
+
+  <div class="rule-band"></div>
+
+  <main>
+    <div class="profile">
+
+      <!-- Left -->
+      <div class="profile-left">
+        <div class="monogram">
+          <img src="CSL LOGO No Text.png" alt="CSL mark" />
+        </div>
+        <div class="profile-name">Benjamin<br>Cholin</div>
+        <div class="profile-title">Commissioning Specialist</div>
+        <div class="profile-location">Saskatchewan, Canada</div>
+        <div class="divider"></div>
+        <div class="contact-block">Contact</div>
+        <div class="contact-email"><a href="mailto:info@cholin.ca">info@cholin.ca</a></div>
+      </div>
+
+      <!-- Right -->
+      <div class="profile-right">
+        <div class="section-label">About</div>
+        <p class="about-text">
+          Cholin Solutions Ltd. provides reliable power system and substation commissioning services with a focus on technical accuracy, practical field execution, and high-quality documentation. Based in Saskatchewan, we serve industrial and utility clients across North America.
+        </p>
+
+        <div class="services-heading">Services</div>
+        <div class="services-grid">
+          <div class="service-item">Power System Commissioning</div>
+          <div class="service-item">Protection Relay Testing</div>
+          <div class="service-item">Substation Testing</div>
+          <div class="service-item">Electrical Troubleshooting</div>
+          <div class="service-item">Design Support</div>
+          <div class="service-item">Maintenance Testing</div>
+          <div class="service-item">Project Support</div>
+          <div class="service-item">Field Documentation</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-copy">&copy; 2025 Cholin Solutions Ltd. — All Rights Reserved.</span>
+    <span class="footer-location">Saskatchewan, Canada</span>
+  </footer>
+
+</body>
+</html>
